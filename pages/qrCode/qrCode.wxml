@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <button bindtap='formSubmit'>二维码</button>
+  <view class="shareCode">
+      <canvas bindtap="previewImg"  style="background:#f1f1f1;" canvas-id="mycanvas" id="scanCode" />
+    </view>
+    <view>
+      <canvas canvas-id="barcode0001"></canvas>
+      <view wx:for="{{idData}}" wx:for-item="item" wx:key="{{idData}}">
+        <view>{{item.id}}</view>
+          <canvas canvas-id="barcode{{item.id}}"></canvas>
+      </view>
+    </view>
+</view>

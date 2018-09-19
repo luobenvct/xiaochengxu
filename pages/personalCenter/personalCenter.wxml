@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 获取地理信息 -->
+  <view>
+    <view bindtap="getLocation">获取地理信息</view>
+    <view>
+        <view>{{addr}}</view>
+        <view>{{name}}</view>
+    </view>
+  </view>
+ 
+  <!-- 获取地理信息 -->
+  <view>
+    <view bindtap="getSystemInfoSync">获取系统信息</view>
+    <view>
+        <view>{{model}}</view>
+        <view>{{getSystemInfoRes.windowWidth}}</view>
+    </view>
+  </view>
+
+  <!-- 微信扫描 -->
+  <view>
+    <view bindtap="scanQRCode">微信扫描</view>
+  </view>
+
+  <!-- 微信录音 -->
+  <view>
+    <view>微信录音</view>
+    <view>
+        <button bindtap="start" class='btn'>开始录音</button>
+        <button bindtap="stop" class='btn'>停止录音</button>
+        <button bindtap="play" class='btn'>播放录音</button>
+    </view>
+  </view>
+
+  <!-- 微信收货地址 -->
+  <view>
+    <view bindtap='chooseAddress'>微信收货地址</view>
+    <view>
+        {{chooseAddress.userName}}
+        {{chooseAddress.detailInfo}}
+        {{chooseAddress.telNumber}}        
+    </view>
+  </view>
+
+   <!-- 微信选择图片 -->
+  <view>
+    <view bindtap='chooseImage'>微信选择图片</view>
+    <view>
+        <image src='{{tempFilePaths}}'></image>
+    </view>
+  </view>
+
+  <!-- 微信剪切板 -->
+  <view>
+    <view bindtap='copyText'>微信剪切板</view>
+    <view>
+        <view>内容：{{contents}} </view>
+        <view  bindtap='copyText' data-text="{{contents}}">复制</view>
+    </view>
+  </view>
+
+  <!-- 设置微信剪切板内容 -->
+  <view>
+    <view>{{url}}</view>
+    <input placeholder='123'></input>
+    <button bindtap='setClipboardData'>click</button>
+  </view>
+
+  <!-- 微信添加手机号 -->
+  <view>
+    <view bindtap='phoneNumTap'>{{phoneNum}}</view>
+  </view>
+
+</view>
